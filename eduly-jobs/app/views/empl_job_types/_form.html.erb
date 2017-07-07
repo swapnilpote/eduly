@@ -1,0 +1,21 @@
+<%= form_for @empl_job_type do |f| %>
+	<% if @empl_job_type.errors.any? %>
+		<h2><%= pluralize(@empl_job_type.errors.count, "error") %> prevented this employment job type from saving:</h2>
+
+		<ul>
+			<% @empl_job_type.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+			<% end %>
+		</ul>
+	<% end %>
+
+	<div class="panel-body">
+		<p>
+			<%= f.label :job_type %> <br>
+			<%= f.text_field :job_type, class: 'form-control' %>
+		</p>
+		<p>
+			<%= f.submit "Submit", class: "btn btn-primary" %>
+		</p>
+	</div>
+<% end %>

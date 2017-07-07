@@ -1,0 +1,31 @@
+<%= form_for @playlist do |f| %>
+	<% if @playlist.errors.any? %>
+		<h2><%= pluralize(@playlist.errors.count, "error") %> prevented this playlist from saving:</h2>
+
+		<ul>
+			<% @playlist.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+			<% end %>
+		</ul>
+	<% end %>
+
+	<div class="form-group">
+		<%= f.label :advanced_category %>
+		<%= f.select :advanced_category_id, AdvancedCategory.order(:advanced_cat_title).collect{ |p| [p.advanced_cat_title, p.id] }, {}, { class: 'form-control' } %>
+	</div>
+
+	<div class="form-group">
+		<%= f.label :playlist_title %>
+		<%= f.text_field :playlist_title, class: 'form-control' %>
+	</div>
+
+	<div class="form-group">
+		<%= f.label :playlist_description %>
+		<%= f.text_area :playlist_description, class: 'form-control',  rows: '5' %>
+	</div>
+
+	<div class="form-group">
+		<%= f.submit "Submit", class: 'btn btn-default' %>
+	</div>
+
+<% end %>

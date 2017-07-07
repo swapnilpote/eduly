@@ -1,0 +1,2 @@
+class AdminWelcomeController < ApplicationController
+end

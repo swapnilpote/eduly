@@ -1,0 +1,37 @@
+<h2 class="sub-header">List of Employment Cities | <%= link_to 'New Employment City', new_empl_city_path %></h2>
+
+<div class="table-responsive">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>City</th>
+				<th>State</th>
+				<th>Number of Jobs</th>
+				<th>Operations</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @empl_cities.each do |empl_city| %>
+			<tr>
+				<td><%= empl_city.id %></td>
+				<td><%= link_to empl_city.city_name, empl_city_path(empl_city) %></td>
+				<td><%= empl_city.empl_state.state_name %></td>
+				<td><%= empl_city.empl_jobs.count %></td>
+				<td>
+					<%= link_to "Edit", edit_empl_city_path(empl_city) %> |
+					<%= link_to "Delete", empl_city_path(empl_city), method: :delete, data: { confirm: 'Are you sure?' } %>
+				</td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
+
+
+<h2>Import Empl City</h2>
+
+<%= form_tag import_empl_cities_path, multipart: true do %>
+	<%= file_field_tag :file %>
+	<%= submit_tag "Import" %>
+<% end %>

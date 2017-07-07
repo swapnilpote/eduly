@@ -1,0 +1,28 @@
+<h3 class="detail-title">Eligibility Details</h3>
+
+<div class="job-highlight">
+    <p>
+        <span class="bold-heading">Gender</span> <br>
+        <span><%= @job.gender %></span>
+    </p>
+    <p>
+        <span class="bold-heading">Age</span> <br>
+        <span><%= @job.age %></span>
+    </p>
+    <p>
+        <span class="bold-heading">Education</span> <br>
+        <span><%= raw @job.qualification %></span>
+    </p>
+    <p>
+        <span class="bold-heading">Physical Requirement</span> <br>
+        <span><%= raw @job.physical_requirement %></span>
+    </p>
+    <p>
+        <span class="bold-heading">Experience Requirement</span> <br>
+        <span><%= raw @job.experience_information %></span>
+    </p>
+    <p>
+        <span class="bold-heading">Need Experience</span>
+        <span><%= check_boolean(@job.need_experience) %></span>
+    </p>
+</div>

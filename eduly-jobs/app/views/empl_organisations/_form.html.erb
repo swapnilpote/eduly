@@ -1,0 +1,24 @@
+<%= form_for @empl_organisation, multipart: true do |f| %>
+	<% if @empl_organisation.errors.any? %>
+		<h2><%= pluralize(@empl_organisation.errors.count, "error") %> prevented this employment organisation from saving:</h2>
+
+		<ul>
+			<% @empl_organisation.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+			<% end %>
+		</ul>
+	<% end %>
+
+	<div class="panel-body">
+		<p>
+			<%= f.label :organisation_name %> <br>
+			<%= f.text_field :organisation_name, class: 'form-control' %>
+		</p>
+		<p>
+			<%= f.file_field :company_logo %>
+		</p>
+		<p>
+			<%= f.submit "Submit", class: "btn btn-primary" %>
+		</p>
+	</div>
+<% end %>

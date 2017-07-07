@@ -1,0 +1,32 @@
+<nav class="navbar navbar-default navbar-static-top">
+	<div class="container" style="padding-bottom: 5px">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+
+			<%= link_to explore_path, class: 'navbar-brand' do %>
+				<span id="logo">EDULY <span class="gray">.IN</span> </span>
+			<% end %>
+		</div>
+
+		<div class="navbar-collapse collapse"  aria-expanded="false" style="height: 1px;" id="navbar">
+			<form role="search" action="/videos/search" accept-charset="UTF-8" method="get" style="float: left; max-width: 870px !important; padding-top: 10px;"><input name="utf8" type="hidden" value="✓">
+				<div class="form-group" style="margin-bottom: 5px !important;">
+					<div class="input-group">
+						<input type="text" name="search" id="search" class="form-control" placeholder="Try: Rails, Python 3">
+						<span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+					</div>
+				</div>
+			</form>
+
+			<ul class="nav navbar-nav navbar-right">
+				<li><%= link_to "PROFILE ", user_path(current_user) %></li>
+				<li><%= link_to "SIGN OUT ", logout_path, method: :delete %></li>
+			</ul>
+		</div>
+	</div>
+</nav>

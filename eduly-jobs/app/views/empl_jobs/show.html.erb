@@ -1,0 +1,7 @@
+<h3><%= @empl_job.empl_designation.designation_title %></h3>
+<p>
+	<%= image_tag @empl_job.empl_organisation.company_logo.url(:tiny) %>
+</p>
+<p>
+	<%= raw @empl_job.notification_summary %>
+</p>

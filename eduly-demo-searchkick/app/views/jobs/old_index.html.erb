@@ -1,0 +1,22 @@
+<%= form_tag jobs_path, role: 'search', method: :get do |f| %>
+	<%= text_field_tag :q, params[:query] %>
+	<%= button_tag 'Search', name: nil %>
+<% end %>
+
+
+<% @jobs.each do |job| %>
+	<%= render 'job', job: job %>
+<% end %>
+
+<% @aggs.each do |agg| %>
+	<%= agg.first.split('_').first.pluralize.titleize %>
+	<br>
+	<%= agg %>
+<% end %>
+
+<br>
+<% @aggs.each do |agg| %>
+	<%= agg[0] %>
+	<%= agg[1]['buckets'].first['key'] %>
+	<br>
+<% end %>

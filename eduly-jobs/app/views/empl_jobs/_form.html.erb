@@ -1,0 +1,136 @@
+<%= form_for @empl_job do |f| %>
+	<% if @empl_job.errors.any? %>
+		<h2><%= pluralize(@empl_job.errors.count, "error") %> prevented this employment job from saving:</h2>
+
+		<ul>
+			<% @empl_job.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+			<% end %>
+		</ul>
+	<% end %>
+
+	<div class="panel-body">
+		<p>
+			<%= f.label :designation_title %> <br>
+			<%= f.select :empl_designation_id, EmplDesignation.order(:designation_title).collect{ |dt| [dt.designation_title, dt.id] }, { }, class: 'form-control' %>
+		</p>
+		<p>
+			<%= f.label :organisation_name %> <br>
+			<%= f.select :empl_organisation_id, EmplOrganisation.order(:organisation_name).collect{ |on| [on.organisation_name, on.id] }, { }, class: 'form-control' %>
+		</p>
+		<p>
+			<%= f.label :city_name %> <br>
+			<%= f.select :empl_city_id, EmplCity.order(:city_name).collect{ |cn| [cn.city_name, cn.id] }, { }, class: 'form-control' %>
+		</p>
+		<p>
+			<%= f.label :job_type %> <br>
+			<%= f.select :empl_job_type_id, EmplJobType.order(:job_type).collect{ |jb| [jb.job_type, jb.id] }, { }, class: 'form-control' %>
+		</p>
+		<p>
+			<%= f.label :number_of_positions %> <br>
+			<%= f.number_field :number_of_positions, class: 'form-control' %>
+		</p>
+		<p>
+			<%= f.label :job_type_detail %> <br>
+			<%= f.text_field :job_type_detail, class: 'form-control' %>
+		</p>
+		<p>
+			<%= f.label :notification_summary %> <br>
+			<%= f.cktext_area :notification_summary, class: 'form-control' %>
+		</p>
+		<p>
+			<%= f.label :announcemnet_date %> <br>
+			<%= f.date_field :announcemnet_date, class: 'form-control' %>
+		</p>
+		<p>
+			<%= f.label :start_application_date %> <br>
+			<%= f.date_field :start_application_date, class: 'form-control' %>
+		</p>
+		<p>
+			<%= f.label :last_application_date %> <br>
+			<%= f.date_field :last_application_date, class: 'form-control' %>
+		</p>
+		<p>
+			<%= f.label :salary_information %> <br>
+			<%= f.cktext_area :salary_information, class: 'form-control' %>
+		</p>
+		<p>
+			<%= f.label :monthly_salary %> <br>
+			<%= f.text_field :monthly_salary, class: 'form-control' %>
+		</p>
+		<p>
+			<%= f.label :salary_negotiable %> <br>
+			<%= f.radio_button :salary_negotiable, true, checked: true %><%= f.label :salary_negotiable, "Yes" %>
+			<%= f.radio_button :salary_negotiable, false %><%= f.label :salary_negotiable, "No" %>
+		</p>
+		<p>
+			<%= f.label :application_procedure %> <br>
+			<%= f.cktext_area :application_procedure, class: 'form-control' %>
+		</p>
+		<p>
+			<%= f.label :written_test %> <br>
+			<%= f.radio_button :written_test, true, checked: true %><%= f.label :written_test, "Yes" %>
+			<%= f.radio_button :written_test, false %><%= f.label :written_test, "No" %>
+		</p>
+		<p>
+			<%= f.label :interview %> <br>
+			<%= f.radio_button :interview, true, checked: true %><%= f.label :interview, "Yes" %>
+			<%= f.radio_button :interview, false %><%= f.label :interview, "No" %>
+		</p>
+		<p>
+			<%= f.label :online_test %> <br>
+			<%= f.radio_button :online_test, true, checked: true %><%= f.label :online_test, "Yes" %>
+			<%= f.radio_button :online_test, false %><%= f.label :online_test, "No" %>
+		</p>
+		<p>
+			<%= f.label :language_test %> <br>
+			<%= f.radio_button :language_test, true, checked: true %><%= f.label :language_test, "Yes" %>
+			<%= f.radio_button :language_test, false %><%= f.label :language_test, "No" %>
+		</p>
+		<p>
+			<%= f.label :physical_test %> <br>
+			<%= f.radio_button :physical_test, true, checked: true %><%= f.label :physical_test, "Yes" %>
+			<%= f.radio_button :physical_test, false %><%= f.label :physical_test, "No" %>
+		</p>
+		<p>
+			<%= f.label :medical_test %> <br>
+			<%= f.radio_button :medical_test, true, checked: true %><%= f.label :medical_test, "Yes" %>
+			<%= f.radio_button :medical_test, false %><%= f.label :medical_test, "No" %>
+		</p>
+		<p>
+			<%= f.label :selection_procedure_information %> <br>
+			<%= f.cktext_area :selection_procedure_information, class: 'form-control' %>
+		</p>
+		<p>
+			<%= f.label :gender %> <br>
+			<%= f.text_field :gender, class: 'form-control' %>
+		</p>
+		<p>
+			<%= f.label :age %> <br>
+			<%= f.text_field :age, class: 'form-control' %>
+		</p>
+		<p>
+			<%= f.label :qualification %> <br>
+			<%= f.cktext_area :qualification, class: 'form-control' %>
+		</p>
+		<p>
+			<%= f.label :physical_requirement %> <br>
+			<%= f.cktext_area :physical_requirement, class: 'form-control' %>
+		</p>
+		<p>
+			<%= f.label :experience_information %> <br>
+			<%= f.cktext_area :experience_information, class: 'form-control' %>
+		</p>
+		<p>
+			<%= f.label :need_experience %> <br>
+			<%= f.radio_button :need_experience, "1", checked: true %><%= f.label :need_experience, "Yes" %>
+			<%= f.radio_button :need_experience, "0" %><%= f.label :need_experience, "No" %>
+		</p>
+		<p>
+			<%= f.file_field :job_references_pdf %>
+		</p>
+		<p>
+			<%= f.submit "Submit", class: "btn btn-primary" %>
+		</p>
+	</div>
+<% end %>

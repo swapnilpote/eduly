@@ -1,0 +1,9 @@
+<%= form_tag jobs_path, role: 'search', method: :get do |f| %>
+	<%= text_field_tag :q, params[:query] %>
+	<%= button_tag 'Search', name: nil %>
+<% end %>
+
+
+<% @jobs.each do |job| %>
+	<%= render 'job', job: job %>
+<% end %>

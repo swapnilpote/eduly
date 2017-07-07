@@ -1,0 +1,13 @@
+<div class="jumbotron">
+	<div class="container">
+		<h1 style="margin-bottom: 5px;">Your Profile</h1>
+
+		<p class="lead" style="font-weight: 600">
+			Hey there <%= current_user.email %>! This is your profile. You can edit it here.
+		</p>
+	</div>
+</div>
+
+<div id="main">
+	<%= render 'users/non-tutor/non_tutor' %>
+</div>

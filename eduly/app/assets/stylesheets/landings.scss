@@ -1,0 +1,414 @@
+@import "customVariables";
+@import "functions";
+
+/* Laptop, Desktop styling section started */
+
+@media (min-width: 1200px) {
+  .social-media {
+    float: right;
+    width: auto;
+
+    a {
+      float: left;
+      padding: 15px 15px;
+      font-size: 30px;
+    }
+  }
+
+    .showcase {
+        background: image-url('bg.jpg') no-repeat 0 -100px;
+        background-size: cover;
+        text-align: center;
+        height: 400px;
+        padding: 30px 0;
+        color: set-text-color($main-color);
+
+        h1 {
+            font-size: 50px;
+        }
+
+        h3 {
+            padding-bottom: 30px;
+            font-size: 25px;
+        }
+
+        .container {
+            background: #000;
+            opacity: 0.8;
+            padding: 20px 30px 30px 30px;
+        }
+    }
+
+    .eduly-info-section {
+        padding: 30px 0;
+        text-align: center;
+        background: $main-color;
+        color: set-text-color($main-color) !important;
+
+        h3 {
+            padding: 0;
+            margin: 0;
+            font-size: 30px;
+            color: set-text-color($main-color);
+        }
+
+        .eduly-keyword-box {
+            float: left;
+            width: 100%;
+            text-align: left;
+            text-transform: uppercase;
+            font-size: 16px;
+            background: #000;
+            opacity: 0.8;
+            padding: 10px;
+            word-spacing: 5px;
+        }
+    }
+
+    .job-keyword-section {
+        padding: 30px 0;
+        text-align: center;
+        color: #000 !important;
+        border-bottom: 1px solid #7f7f7f;
+
+        .popular-job-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+
+            .keyword-heading {
+              text-transform: uppercase;
+              font-size: 22px;
+            }
+
+            ul {
+              list-style: none;
+              padding: 0;
+              margin: 0;
+
+              li {
+                padding: 5px 0;
+              }
+            }
+
+            ul > li > a {
+              font-size: 16px;
+              text-transform: uppercase;
+            }
+        }
+    }
+
+    .recent-section {
+        background: #e6ebf1;
+        padding: 30px 0;
+
+        h3 {
+            padding: 0;
+            margin: 0 0 10px 10px;
+            font-size: 30px;
+        }
+    }
+
+    .job-card {
+        float: left;
+        width: 100%;
+        padding: 10px 20px;
+        margin: 0 0 20px 0;
+        background-color: #fff;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
+        h4 {
+            font-size: 20px;
+            margin: 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #000;
+
+            a:hover {
+                text-decoration: none;
+            }
+        }
+
+        .job-company-detail {
+            float: left;
+            padding-bottom: 20px;
+            padding-top: 10px;
+
+            .company-logo {
+                float: left;
+                margin-left: 30px;
+                margin-right: 30px;
+                width: 55px;
+
+                img {
+                    width: 55px;
+                    height: 55px;
+                }
+            }
+
+            .company-detail {
+                float: left;
+                width: 400px;
+
+                ul {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+
+                    li {
+                        font-size: 16px;
+                        margin-top: 5px;
+                    }
+                }
+            }
+        }
+
+        .job-detail {
+            float: left;
+            width: 100%;
+            font-size: 16px;
+
+            .job-date {
+                float: left;
+                width: 45%;
+            }
+
+            .job-salary {
+                float: left;
+                width: 35%;
+            }
+
+            .job-post {
+                float: left;
+                width: 20%;
+            }
+        }
+
+        .job-info {
+          float: left;
+          width: 100%;
+          padding: 10px 0 0;
+          margin: 10px 0 0;
+          border-top: 1px solid #000;
+        }
+    }
+
+    .card-img {
+        float: left;
+        width: 100%;
+        height: 172px;
+        margin-top: 30px;
+        margin-bottom: 0px;
+
+        img {
+            float: left;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+/* Mobile, Tablet, Phablet styling section started */
+
+@media (max-width: 1199px) {
+  .social-media {
+    float: right;
+    width: auto;
+
+    a {
+      float: left;
+      padding: 15px 15px;
+      font-size: 30px;
+    }
+  }
+
+    .showcase {
+        text-align: center;
+        padding: 30px 0;
+        color: set-text-color($main-color);
+
+        h1 {
+            font-size: 30px;
+        }
+
+        h3 {
+            padding-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .container {
+            background: #000;
+            opacity: 0.8;
+            padding: 20px 30px 30px 30px;
+        }
+    }
+
+    .eduly-info-section {
+        padding: 30px 0;
+        text-align: center;
+        background: $main-color;
+        color: set-text-color($main-color) !important;
+
+        h3 {
+            padding: 0;
+            margin: 0;
+            font-size: 30px;
+            color: set-text-color($main-color);
+        }
+
+        .eduly-keyword-box {
+            float: left;
+            width: 100%;
+            text-align: left;
+            text-transform: uppercase;
+            font-size: 16px;
+            background: #000;
+            opacity: 0.8;
+            padding: 10px;
+            word-spacing: 5px;
+        }
+    }
+
+    .job-keyword-section {
+        padding: 30px 0;
+        text-align: center;
+        color: #000 !important;
+        border-bottom: 1px solid #7f7f7f;
+
+        .popular-job-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+
+            .keyword-heading {
+              text-transform: uppercase;
+              font-size: 22px;
+            }
+
+            ul {
+              list-style: none;
+              padding: 0;
+              margin: 0;
+
+              li {
+                padding: 5px 0;
+              }
+            }
+
+            ul > li > a {
+              font-size: 16px;
+              text-transform: uppercase;
+            }
+        }
+    }
+
+    .recent-section {
+        background: #e6ebf1;
+        padding: 30px 0;
+
+        h3 {
+            padding: 0;
+            margin: 0 0 10px 10px;
+            font-size: 30px;
+        }
+    }
+
+    .job-card {
+        float: left;
+        width: 100%;
+        padding: 10px 20px;
+        margin: 0 0 20px 0;
+        background-color: #fff;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
+        h4 {
+            font-size: 20px;
+            margin: 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #000;
+
+            a:hover {
+                text-decoration: none;
+            }
+        }
+
+        .job-company-detail {
+            float: left;
+            width: 100%;
+            padding-bottom: 20px;
+            margin-top: 10px;
+
+            .company-logo {
+                float: left;
+                width: 20%;
+                margin-left: 5%;
+                margin-right: 5%;
+
+                img {
+                    width: 55px;
+                    height: 55px;
+                }
+            }
+
+            .company-detail {
+                float: left;
+                width: 70%;
+
+                ul {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+
+                    li {
+                        font-size: 16px;
+                        margin-top: 5px;
+                    }
+                }
+            }
+        }
+
+        .job-detail {
+            float: left;
+            width: 100%;
+            font-size: 16px;
+
+            .job-date {
+                float: left;
+                width: 45%;
+            }
+
+            .job-salary {
+                float: left;
+                width: 35%;
+            }
+
+            .job-post {
+                float: left;
+                width: 20%;
+            }
+        }
+
+        .job-info {
+          float: left;
+          width: 100%;
+          padding: 10px 0 0;
+          margin: 10px 0 0;
+          border-top: 1px solid #000;
+        }
+    }
+
+    .card-img {
+        float: left;
+        width: 100%;
+        height: 172px;
+        margin-top: 20px;
+        margin-bottom: 0px;
+
+        img {
+            float: left;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

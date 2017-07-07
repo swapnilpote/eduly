@@ -1,0 +1,30 @@
+<h3 class="detail-title">Selection Details</h3>
+
+<div class="job-highlight">
+    <p>
+        <span class="heading">Written Test</span>
+        <span><%= check_boolean(@job.written_test) %></span>
+    </p>
+    <p>
+        <span class="heading">Interview</span>
+        <span><%= check_boolean(@job.interview) %></span>
+    </p>
+    <p>
+        <span class="heading">Online Test</span>
+        <span><%= check_boolean(@job.online_test) %></span>
+    </p>
+    <p>
+        <span class="heading">Language Test</span>
+        <span><%= check_boolean(@job.language_test) %></span>
+    </p>
+    <p>
+        <span class="heading">Physical Test</span>
+        <span><%= check_boolean(@job.physical_test) %></span>
+    </p>
+    <p>
+        <span class="heading">Medical Test</span>
+        <span><%= check_boolean(@job.medical_test) %></span>
+    </p>
+</div>
+
+<%= raw @job.selection_procedure_information %>

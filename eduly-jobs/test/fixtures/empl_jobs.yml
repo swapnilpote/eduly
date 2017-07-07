@@ -1,0 +1,61 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  empl_designation_id: 
+  empl_organisation_id: 
+  empl_city_id: 
+  empl_job_type_id: 
+  empl_education_id: 
+  number_of_positions: 1
+  job_type_detail: MyString
+  notification_summary: MyText
+  announcemnet_date: 2016-10-27
+  start_application_date: 2016-10-27
+  last_application_date: 2016-10-27
+  salary_information: MyText
+  monthly_salary: MyString
+  salary_negotiable: false
+  application_procedure: MyText
+  written_test: false
+  interview: false
+  online_test: false
+  language_test: false
+  physical_test: false
+  medical_test: false
+  selection_procedure_information: MyText
+  gender: MyString
+  age: MyString
+  qualification: MyText
+  physical_requirement: MyText
+  experience_information: MyText
+  need_experience: false
+
+two:
+  empl_designation_id: 
+  empl_organisation_id: 
+  empl_city_id: 
+  empl_job_type_id: 
+  empl_education_id: 
+  number_of_positions: 1
+  job_type_detail: MyString
+  notification_summary: MyText
+  announcemnet_date: 2016-10-27
+  start_application_date: 2016-10-27
+  last_application_date: 2016-10-27
+  salary_information: MyText
+  monthly_salary: MyString
+  salary_negotiable: false
+  application_procedure: MyText
+  written_test: false
+  interview: false
+  online_test: false
+  language_test: false
+  physical_test: false
+  medical_test: false
+  selection_procedure_information: MyText
+  gender: MyString
+  age: MyString
+  qualification: MyText
+  physical_requirement: MyText
+  experience_information: MyText
+  need_experience: false

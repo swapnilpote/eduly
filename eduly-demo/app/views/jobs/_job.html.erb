@@ -1,0 +1,4 @@
+	<%= content_tag :div, id: 'job_#{job.id}' do %>
+		<h2><%= link_to job.empl_designation.designation_title %></h2>
+		<h5><%= job.job_type_detail %></h5>
+	<% end %>

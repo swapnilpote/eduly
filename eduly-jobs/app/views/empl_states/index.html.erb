@@ -1,0 +1,35 @@
+<h2 class="sub-header">List of Employment States | <%= link_to 'New Employment State', new_empl_state_path %></h2>
+
+<div class="table-responsive">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>States</th>
+				<th>Number of Cities</th>
+				<th>Operations</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @empl_states.each do |empl_state| %>
+			<tr>
+				<td><%= empl_state.id %></td>
+				<td><%= link_to empl_state.state_name, empl_state_path(empl_state) %></td>
+				<td><%= empl_state.empl_cities.count %></td>
+				<td>
+					<%= link_to "Edit", edit_empl_state_path(empl_state) %> |
+					<%= link_to "Delete", empl_state_path(empl_state), method: :delete, data: { confirm: 'Are you sure?' } %>
+				</td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
+
+
+<h2>Import Empl State</h2>
+
+<%= form_tag import_empl_states_path, multipart: true do %>
+	<%= file_field_tag :file %>
+	<%= submit_tag "Import" %>
+<% end %>

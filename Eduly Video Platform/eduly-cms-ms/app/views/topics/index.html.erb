@@ -1,0 +1,10 @@
+<%= link_to 'New Topic', new_topic_path %>
+
+<ul>
+	<% @topics.each do |topic| %>
+		<li>
+			<%= link_to topic.topic_title, topic_path(topic) %> |
+			<%= link_to 'Courses', courses_path(topic_id: topic.id) %>
+		</li>
+	<% end %>
+</ul>

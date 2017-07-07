@@ -1,0 +1,27 @@
+<%= form_tag jobs_path, role: 'search', method: :get do |f| %>
+	<%= text_field_tag :query, params[:query] %>
+	<%= button_tag 'Search', name: nil %>
+<% end %>
+
+<% @jobs.each do |job| %>
+	<h2><%= job.empl_designation.designation_title %></h2>
+	<h5><%= job.empl_organisation.organisation_name %></h5>
+<% end %>
+
+<% if @jobs.aggs['designation_title'].present?  %>
+	<span>Designation</span>
+	<ul class="menu">
+		<% @jobs.aggs['designation_title']['buckets'].each do |filter| %>
+			<li><%= link_to "#{filter["key"]} (#{filter["doc_count"]})", search_jobs_path("#{filter['key']}") %></li>
+		<% end %>
+	</ul>
+<% end %>
+
+<% if @jobs.aggs['city_name'].present?  %>
+	<span>Designation</span>
+	<ul class="menu">
+		<% @jobs.aggs['city_name']['buckets'].each do |filter| %>
+			<li><%= link_to "#{filter["key"]} (#{filter["doc_count"]})", search_jobs_path("#{filter['key']}") %></li>
+		<% end %>
+	</ul>
+<% end %>

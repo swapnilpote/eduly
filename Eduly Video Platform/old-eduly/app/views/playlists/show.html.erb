@@ -1,0 +1,51 @@
+<div class="jumbotron">
+	<div class="container">
+		<h1 style="margin-bottom: 5px;"><%= @playlist.playlist_title %> Playlist</h1>
+
+		<p class="lead" style="font-weight: 600">
+			Hey there <%= current_user.email %>! This is playlist of <%= @playlist.playlist_title %>.
+		</p>
+	</div>
+</div>
+
+<div id="main">
+	<div class="row">
+		<% @playlist.videos.each do |video| %>
+			<div class="col-lg-4 col-md-6 col-sm-12">
+				<div class="post panel panel-default">
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-12">
+								<%= link_to video_path(video), class: "clearfix" do %>
+									<%= image_tag video.image.url(:medium), class: "post-icon img-responsive" %>
+								<% end %>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<div class="post-heading">
+									<h2 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><%= link_to video.video_title, video_path(video) %></h2>
+								</div>
+
+								<div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+									<%= video.keywords %>
+								</div>
+
+								<div class="post-meta">
+									<div class="row">
+										<div class="col-md-6 col-sm-6 col-xs-6">
+											<span class="label label-default">
+											published: <%= time_ago_in_words(video.created_at) %>
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<% end %>
+	</div>
+</div>

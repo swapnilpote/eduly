@@ -1,0 +1,75 @@
+<h3 class="detail-title">Job Details</h3>
+
+<div class="job-highlight">
+    <p>
+        <span class="heading">Designation</span>
+        <span><%= @job.empl_designation.designation_title %></span>
+    </p>
+    <p>
+        <span class="heading">Employement Type</span>
+        <span><%= @job.empl_job_type.job_type %></span>
+    </p>
+</div>
+
+
+<h3 class="detail-title">Notification Summary</h3>
+
+<div class="job-highlight">
+    <%= raw @job.notification_summary %>
+</div>
+
+
+<h3 class="detail-title">Important Dates</h3>
+
+<div class="job-highlight">
+    <table class="table">
+        <tr>
+            <th>Date</th>
+            <th>Event</th>
+        </tr>
+        <tr>
+            <td><%= @job.announcemnet_date.strftime("%d-%b-%Y") %></td>
+            <td>Announcement Date</td>
+        </tr>
+        <tr>
+            <td><%= @job.start_application_date.strftime("%d-%b-%Y") %></td>
+            <td>Start Date of Application</td>
+        </tr>
+        <tr>
+            <td><%= @job.last_application_date.strftime("%d-%b-%Y") %></td>
+            <td>Last Date of Application</td>
+        </tr>
+    </table>
+</div>
+
+
+<h3 class="detail-title">Salary</h3>
+
+<div class="job-highlight">
+    <p>
+        <span class="heading">Salary Information</span>
+        <span><%= strip_tags(@job.salary_information) %></span>
+    </p>
+    <p>
+        <span class="heading">Monthly Salary</span>
+        <span><%= @job.monthly_salary %></span>
+    </p>
+    <p>
+        <span class="heading">Negotiable</span>
+        <span><%= check_boolean(@job.salary_negotiable) %></span>
+    </p>
+</div>
+
+
+<h3 class="detail-title">Application Procedure</h3>
+
+<div class="job-highlight">
+    <%= raw @job.application_procedure %>
+</div>
+
+
+<h3 class="detail-title">References</h3>
+
+<div class="job-highlight">
+    <%= link_to "Job Detail PDF", @job.job_references_pdf.url, target: "_blank" %>
+</div>

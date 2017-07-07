@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  advanced_category_id: 
+  user_id: 
+  playlist_title: MyString
+  playlist_description: MyString
+
+two:
+  advanced_category_id: 
+  user_id: 
+  playlist_title: MyString
+  playlist_description: MyString

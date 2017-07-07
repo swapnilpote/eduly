@@ -1,0 +1,45 @@
+<%= form_for @video, html: { multipart: true } do |f| %>
+	<% if @video.errors.any? %>
+		<h2><%= pluralize(@video.errors.count, "error") %> prevented this video from saving:</h2>
+
+		<ul>
+			<% @video.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+			<% end %>
+		</ul>
+	<% end %>
+
+	<div class="form-group">
+		<%= f.label :playlist %>
+		<%= f.select :playlist_id, current_user.playlists.order(:playlist_title).collect{ |p| [p.playlist_title, p.id] }, {}, class: 'form-control' %>
+	</div>
+
+	<div class="form-group">
+		<%= f.label :video_title %>
+		<%= f.text_field :video_title, class: 'form-control' %>
+	</div>
+
+	<div class="form-group">
+		<%= f.label :video_description %>
+		<%= f.text_area :video_description, class: 'form-control', rows: '5' %>
+	</div>
+
+	<div class="form-group">
+		<%= f.label :keywords %>
+		<%= f.text_area :keywords, class: 'form-control', rows: '5' %>
+	</div>
+
+	<div class="form-group">
+		<%= f.label :video_url %>
+		<%= f.text_area :video_url, class: 'form-control', rows: '5' %>
+	</div>
+
+	<div class="form-group">
+		<%= f.file_field :image %>
+	</div>
+
+	<div class="form-group">
+		<%= f.submit "Submit", class: 'btn btn-default' %>
+	</div>
+
+<% end %>

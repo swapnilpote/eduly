@@ -1,0 +1,34 @@
+<h2 class="sub-header">List of Employment Designations | <%= link_to 'New Designation', new_empl_designation_path %></h2>
+
+<div class="table-responsive">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Designation</th>
+				<th>Number of Jobs</th>
+				<th>Operations</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @empl_designations.each do |empl_designation| %>
+			<tr>
+				<td><%= empl_designation.id %></td>
+				<td><%= link_to empl_designation.designation_title, empl_designation_path(empl_designation) %></td>
+				<td><%= empl_designation.empl_jobs.count %></td>
+				<td>
+					<%= link_to "Edit", edit_empl_designation_path(empl_designation) %> |
+					<%= link_to "Delete", empl_designation_path(empl_designation), method: :delete, data: { confirm: 'Are you sure?' } %>
+				</td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
+
+<h2>Import Empl Designation</h2>
+
+<%= form_tag import_empl_designations_path, multipart: true do %>
+	<%= file_field_tag :file %>
+	<%= submit_tag "Import" %>
+<% end %>

@@ -1,0 +1,17 @@
+<div class="container">
+  <%= link_to "ED<span style='color: black'>ULY</span>".html_safe, root_path, class: 'navbar-brand' %>
+
+  <%= form_tag search_path, class: 'navbar-form', style: 'padding: 15px 0', role: 'search', method: :get do %>
+      <div class="form-group" style="display:inline;">
+          <div class="input-group input-group-sm">
+              <%= text_field_tag :search, params[:search], class: 'form-control', placeholder: 'IBPS, SSC, Police, Teacher, Engineer etc' %>
+
+              <span class="input-group-addon">
+                  <span class='glyphicon glyphicon-search'></span>
+              </span>
+          </div>
+      </div>
+  <% end %>
+</div>
+
+<%= render 'layouts/shared/navbar' %>

@@ -1,0 +1,63 @@
+<div class="container">
+  <h3>
+    <%= link_to search_path() do %>
+      Recent Sarkari Naukri <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+    <% end %>
+  </h3>
+
+  <% @jobs.each_slice(2) do |jobs| %>
+  <div class="row">
+      <% jobs.each do |job| %>
+      <div class="col-md-6">
+          <div class="job-card">
+              <h4><%= link_to job.empl_designation.designation_title, job_path(job) %></h4>
+
+              <div class="job-company-detail">
+                  <div class="company-logo">
+                      <%= company_logo_for(job) %>
+                  </div>
+
+                  <div class="company-detail">
+                      <ul>
+                          <li><i class="fa fa-building"></i> &nbsp; <%= job.empl_organisation.organisation_name %></li>
+                          <li><i class="fa fa-map-marker"></i> &nbsp; <%= job.empl_city.city_name %></li>
+                      </ul>
+                  </div>
+              </div>
+
+              <div class="job-detail">
+                  <div class="job-date">
+                      <i class="fa fa-calendar"></i> &nbsp; Last date : <%= job.last_application_date.strftime("%d-%b-%Y") %>
+                  </div>
+
+                  <div class="job-salary">
+                      <i class="fa fa-money"></i> &nbsp;
+                      Salary : <i class="fa fa-rupee"></i>
+                      <%= job.monthly_salary %>
+                  </div>
+
+                  <div class="job-post">
+                      Posts : <%= job.number_of_positions %>
+                  </div>
+
+                  <div class="job-info">
+                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                    <%= job.created_at.strftime("%d-%b-%Y") %>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <% end %>
+
+      <!-- <div class="col-md-6">
+          <div class="card-img">
+              <%= image_tag('learning.png') %>
+          </div>
+
+          <div class="card-img">
+              <%= image_tag('learning.png') %>
+          </div>
+      </div> -->
+  </div>
+  <% end %>
+</div>

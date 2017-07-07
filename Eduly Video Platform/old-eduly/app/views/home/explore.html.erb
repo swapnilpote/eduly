@@ -1,0 +1,55 @@
+<div class="jumbotron">
+	<div class="container">
+		<h1 style="text-align: center;">WELCOME TO EDULY.IN</h1>
+
+		<p class="lead" style="text-align: center;">
+			Our goal is to provide quality, free and / or highly accessible content that anyone can use to build or grow their skills.
+		</p>
+	</div>
+</div>
+
+<div id="main">
+	<section id="playlist-updates" class="updates">
+		<h2>RECENT PLAYLISTS</h2>
+		<p class="lead">These are recently added playlists by our tutor from all over the India. If you want to share your knowledge do drop mail on this email id <b>edulyindia@gmail.com</b> .</p>
+
+		<div id="playlists" class="row">
+			<% @playlists.each do |playlist| %>
+			<div class="col-lg-4 col-md-6 col-sm-12">
+				<div class="post panel panel-default" id="post_173">
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-12">
+								<%= link_to playlist_path(playlist), class: "clearfix" do %>
+
+										<%= image_tag playlist.videos.first.image.url(:medium), class: "post-icon img-responsive" %>
+
+								<% end %>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<div class="post-heading">
+									<h2 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><%= link_to playlist.playlist_title, playlist_path(playlist) %></h2>
+								</div>
+
+								<div class="post-meta">
+									<div class="row">
+										<div class="col-md-6 col-sm-6 col-xs-6">
+											<span class="label label-default">
+												<%= time_ago_in_words(playlist.created_at) %>
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<% end %>
+		</div>
+	</section>
+
+</div>

@@ -1,0 +1,31 @@
+<h2 class="sub-header">List of Cities | <%= link_to "New City", new_city_path %></h2>
+
+<div class="table-responsive">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>City</th>
+				<th>State</th>
+				<th>News Count</th>
+				<th>Last News Release</th>
+				<th>Operations</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @cities.each do |city| %>
+			<tr>
+				<td><%= city.id %></td>
+				<td><%= city.city_name %></td>
+				<td><%= city.state.state_name %></td>
+				<td><%= city.news_articles.count %></td>
+				<td><%= city.news_articles.last.created_at.strftime("%B %d, %Y") %></td>
+				<td>
+					<%= link_to "Edit", edit_city_path(city) %> |
+					<%= link_to "Delete", city_path(city), method: :delete, data: { confirm: 'Are you sure?' } %>
+				</td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>

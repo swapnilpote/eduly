@@ -1,0 +1,140 @@
+div.jumbotron {
+	background-color: #1abc9c;
+	color: white;
+	margin-bottom: 0px;
+	padding-top: 24px;
+	padding-bottom: 24px;
+	border-radius: 0px !important;
+
+	#landing-logo {
+		margin-top: 20px;
+		margin-bottom: 30px;
+	}
+
+	p {
+		color: #b6e6dc;
+	}
+
+	h1 {
+		font-size: 40px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+	}
+}
+
+.lead {
+	margin-bottom: 40px;
+	font-weight: 600;
+}
+
+#main {
+	padding-top: 40px;
+
+	h1,h2,h3,h4,h5,h6 {
+		font-weight: 100;
+	}
+}
+
+.updates {
+	display: block !important;
+
+	h2 {
+		text-align: center;
+	}
+}
+
+.post .video-label {
+  position: absolute;
+  top: 120px;
+  right: -3px;
+
+	.label {
+		font-size: 14px;
+    -moz-border-radius-topright: 0px;
+    -webkit-border-top-right-radius: 0px;
+    border-top-right-radius: 0px;
+    -moz-border-radius-bottomright: 0px;
+    -webkit-border-bottom-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    -moz-box-shadow: 0 2px 0px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 2px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 0px rgba(0, 0, 0, 0.5);
+	}
+}
+
+.label {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+
+.label-warning {
+  background-color: #f0ad4e;
+}
+
+.label {
+  display: inline;
+  padding: .2em .6em .3em;
+  font-size: 75%;
+  font-weight: bold;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
+}
+
+.label-success {
+  background-color: #5cb85c;
+}
+
+a {
+  color: #16a085;
+  text-decoration: none !important;
+}
+
+.post .post-heading {
+  margin-top: 15px;
+
+	h2 {
+    font-size: 1.2em;
+    font-weight: 600 !important;
+    text-align: left !important;
+
+		a {
+			color: #16a085 !important;
+		}
+	}
+}
+
+ul.post-tags-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+	li {
+		float: left;
+	  background-color: #f6f6f6;
+	  margin-right: 4px;
+	  padding: 2px 4px;
+
+		a {
+			color: #16a085 !important;
+	    text-decoration: none !important;
+		}
+	}
+}
+
+.post .post-meta {
+  margin-top: 5px;
+}
+
+.label {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+.label-default {
+  background-color: #777777;
+}

@@ -1,0 +1,2 @@
+module CustomSearchKeywordsHelper
+end

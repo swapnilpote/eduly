@@ -1,0 +1,27 @@
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "Banking", all_banks_jobs_path %></li>
+        <li><%= link_to "Railway / Metro Rail", railway_metro_rail_jobs_path %></li>
+        <li><%= link_to "SSC / PSC / UPSC", ssc_psc_upsc_jobs_path %></li>
+        <li><%= link_to "Police / Defence", police_defence_jobs_path %></li>
+        <li><%= link_to "Medical", medical_department_jobs_path %></li>
+        <li><%= link_to "Research", research_jobs_path %></li>
+        <li><%= link_to "Engineering", engineering_jobs_path %></li>
+        <li><%= link_to "Internship", internship_apprenticeship_jobs_path %></li>
+        <li><%= link_to "Teaching", teaching_jobs_path %></li>
+      </ul>
+    </div>
+  </div>
+</nav>

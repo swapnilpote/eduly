@@ -1,0 +1,19 @@
+<div class="container">
+    <h1>Search Your Dream Gov Job!</h1>
+
+    <h3>Just One Click Away</h3>
+
+    <%= form_tag search_path, class: 'search-field', role: 'search', method: :get do |f| %>
+        <div class='row'>
+            <div class='col-md-12'>
+                <div class='input-group input-group-lg'>
+                    <%= text_field_tag :search, params[:search], class: 'form-control', placeholder: 'IBPS, SSC, Police, Teacher, Engineer etc' %>
+
+                    <span class='input-group-btn'>
+                    <%= button_tag "Search", class: 'btn btn-success', name: nil %>
+                    </span>
+                </div>
+            </div>
+        </div>
+    <% end %>
+</div>

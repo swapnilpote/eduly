@@ -1,0 +1,21 @@
+<%= form_for @empl_designation do |f| %>
+	<% if @empl_designation.errors.any? %>
+		<h2><%= pluralize(@empl_designation.errors.count, "error") %> prevented this employment designation from saving:</h2>
+
+		<ul>
+			<% @empl_designation.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+			<% end %>
+		</ul>
+	<% end %>
+
+	<div class="panel-body">
+		<p>
+			<%= f.label :designation_title %> <br>
+			<%= f.text_field :designation_title, class: 'form-control' %>
+		</p>
+		<p>
+			<%= f.submit "Submit", class: "btn btn-primary" %>
+		</p>
+	</div>
+<% end %>

@@ -1,0 +1,157 @@
+<% title @job.empl_designation.designation_title + ", " + @job.empl_city.city_name %>
+
+<div class="row">
+  <div class="col-md-8 col-sm-8 col-xs-12">
+    <div class="job-short-description">
+      <div class="job-title">
+        <h2>
+          <%= @job.empl_designation.designation_title %>,
+          <%= @job.empl_city.city_name %>
+        </h2>
+      </div>
+
+      <div class="job-company-detail">
+        <div class="company-logo">
+          <%= company_logo_for(@job) %>
+        </div>
+
+        <div class="company-detail">
+          <ul>
+            <li><i class="fa fa-building"></i> &nbsp;
+              <%= @job.empl_organisation.organisation_name %>
+            </li>
+            <li><i class="fa fa-map-marker"></i> &nbsp;
+              <%= @job.empl_city.city_name %>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job-detail">
+        <div class="job-date">
+          <i class="fa fa-calendar"></i> &nbsp;
+          Last date : <%= @job.last_application_date.strftime("%d-%b-%Y") %>
+        </div>
+
+        <div class="job-type">
+          <i class="fa fa-briefcase"></i> &nbsp;
+          Type : <%= @job.empl_job_type.job_type %>
+        </div>
+
+        <div class="job-salary">
+          <i class="fa fa-money"></i> &nbsp;
+          Salary : <i class="fa fa-rupee"></i>
+          <%= @job.monthly_salary %>
+        </div>
+
+        <div class="job-post">
+          Posts : <%= @job.number_of_positions %>
+        </div>
+      </div>
+    </div>
+
+    <div class="job-ads-inbetween">
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- Eduly single job page ad 1 -->
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-6686587930960808"
+           data-ad-slot="7763264176"
+           data-ad-format="auto"></ins>
+      <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+
+    <div class="job-long-description">
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+          <a href="#job" aria-controls="job" role="tab" data-toggle="tab">
+            About This Job
+          </a>
+        </li>
+        <li role="presentation">
+          <a href="#procedure" aria-controls="procedure" role="tab" data-toggle="tab">
+            Selection Procedure
+          </a>
+        </li>
+        <li role="presentation">
+          <a href="#eligibility" aria-controls="eligibility" role="tab" data-toggle="tab">
+            Eligibility Information
+          </a>
+        </li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="job">
+          <%= render "job_details" %>
+        </div>
+
+        <div role="tabpanel" class="tab-pane" id="procedure">
+          <%= render "selection_details" %>
+        </div>
+
+        <div role="tabpanel" class="tab-pane" id="eligibility">
+          <%= render "eligibility_details" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="job-ads-inbetween">
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- Eduly single job page banner ad 2 -->
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-6686587930960808"
+           data-ad-slot="3832592172"
+           data-ad-format="auto"></ins>
+      <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+
+  <div class="col-md-4 col-sm-4 col-xs-12">
+    <div class="latest-job-section">
+      <div class="latest-job-main">
+        <h3>Latest Jobs</h3>
+
+        <ul>
+          <% @latest.each do |job| %>
+          <li>
+            <div class="job-title">
+              <%= link_to job.empl_designation.designation_title, job_path(job) %>
+            </div>
+            <div class="job-organisation">
+              <i class="fa fa-building"></i> &nbsp; <%= job.empl_organisation.organisation_name %>
+            </div>
+          </li>
+          <% end %>
+
+          <li>
+            <div class="job-title">
+              <%= link_to search_path() do %>
+                Recent Sarkari Naukri <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+              <% end %>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job-ads-inbetween">
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- Eduly single job page sidebar ad 1 -->
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-6686587930960808"
+           data-ad-slot="5309325378"
+           data-ad-format="auto"></ins>
+      <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+</div>

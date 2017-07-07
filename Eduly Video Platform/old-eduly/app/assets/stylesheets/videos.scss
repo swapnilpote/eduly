@@ -1,0 +1,66 @@
+#video {
+	background: #222;
+
+	.video-wrapper {
+		position: relative;
+    padding-bottom: 45%;
+    padding-top: 25px;
+    height: 0;
+	}
+}
+
+.post-header {
+  margin: 10px 0;
+
+	.media {
+		margin-top: 0;
+
+		.media-body {
+			margin-right: 10px;
+
+			.media-heading {
+		    margin-bottom: 10px;
+
+				h1 {
+					margin-top: 0;
+				}
+			}
+
+			.media-time {
+				font-size: 18px;
+				color: #bdc3c7;
+			}
+		}
+	}
+}
+
+.post-content {
+
+	.post-readme {
+		margin-bottom: 30px;
+		padding: 3px;
+		font-size: 18px;
+	}
+
+	h3.heading {
+		margin-top: 0;
+		padding-bottom: 10px;
+		border-bottom: 1px solid #ddd;
+		text-transform: uppercase;
+		color: #6f7b86;
+	}
+
+	.post-comment {
+		display: block !important;
+
+		span {
+			padding: 5px 0;
+			font-size: 16px;
+			font-weight: bold;
+		}
+
+		.comment-box {
+			display: block;
+		}
+	}
+}

@@ -1,0 +1,33 @@
+<div class="container-fluid">
+	<%= video_tag ['video.mp4', 'video.webm'], autoplay: true, loop: true, poster: 'poster.jpg', style: "transform: translate(-50%, -50%);" %>
+
+	<div class="login-box">
+		<div class="login">
+			<div class="login__check">
+			</div>
+
+			<div class="login__form">
+				<a href="auth/facebook" class="connect facebook">
+					<div class="connect__icon">
+						<i class="fa fa-facebook"></i>
+					</div>
+
+					<div class="connect__context">
+						<span>Sign in with <strong>Facebook</strong></span>
+					</div>
+				</a>
+
+				<a href="auth/google_oauth2" class="connect googleplus">
+					<div class="connect__icon">
+						<i class="fa fa-google-plus"></i>
+					</div>
+					<div class="connect__context">
+						<span>Sign in with <strong>Google+</strong></span>
+					</div>
+				</a>
+
+				<p class="login__signup">Want be part of Tutor community? Mail us at &nbsp;<a>edulyindia@gmail.com</a></p>
+			</div>
+		</div>
+	</div>
+</div>

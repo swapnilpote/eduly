@@ -1,0 +1,34 @@
+<h2 class="sub-header">List of Employment Job types | <%= link_to 'New Employment Job type', new_empl_job_type_path %></h2>
+
+<div class="table-responsive">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Job type</th>
+				<th>Number of Jobs</th>
+				<th>Operations</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @empl_job_types.each do |empl_job_type| %>
+			<tr>
+				<td><%= empl_job_type.id %></td>
+				<td><%= link_to empl_job_type.job_type, empl_job_type_path(empl_job_type) %></td>
+				<td><%= empl_job_type.empl_jobs.count %></td>
+				<td>
+					<%= link_to "Edit", edit_empl_job_type_path(empl_job_type) %> |
+					<%= link_to "Delete", empl_job_type_path(empl_job_type), method: :delete, data: { confirm: 'Are you sure?' } %>
+				</td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
+
+<h2>Import Empl Job Type</h2>
+
+<%= form_tag import_empl_job_types_path, multipart: true do %>
+	<%= file_field_tag :file %>
+	<%= submit_tag "Import" %>
+<% end %>

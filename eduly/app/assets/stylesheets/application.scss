@@ -1,0 +1,76 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap-sprockets";
+@import "customVariables";
+@import "bootstrap";
+@import "customVariables";
+@import "functions";
+@import "font-awesome";
+@import "navbar-form";
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
+
+
+body {
+    font-family: 'Lato', sans-serif;
+    background: #e6ebf1;
+}
+
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+
+    a {
+        color: set-text-color($main-color) !important;
+        text-transform: uppercase;
+        padding: 15px 10px !important;
+    }
+}
+
+footer {
+    padding: 30px 0;
+    background: darken($main-color, 10%);
+    color: set-text-color($main-color);
+
+    .fa {
+        color: #fff;
+        font-size: 18px;
+    }
+
+    a {
+      float: left;
+      width: auto;
+      margin-right: 10px;
+      color: #fff;
+    }
+}
+
+// Mobile view toggle box
+.navbar-default .navbar-toggle {
+    border-color: #fff !important;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff !important;
+}
+
+
+// Logo
+.navbar-brand {
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: normal;
+}

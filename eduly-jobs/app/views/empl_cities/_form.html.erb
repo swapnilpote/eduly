@@ -1,0 +1,25 @@
+<%= form_for @empl_city do |f| %>
+	<% if @empl_city.errors.any? %>
+		<h2><%= pluralize(@empl_city.errors.count, "error") %> prevented this employment city from saving:</h2>
+
+		<ul>
+			<% @empl_city.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+			<% end %>
+		</ul>
+	<% end %>
+
+	<div class="panel-body">
+		<p>
+			<%= f.label :state_name %> <br>
+			<%= f.select :empl_state_id, EmplState.order(:state_name).collect{ |sn| [sn.state_name, sn.id] }, { }, class: 'form-control' %>
+		</p>
+		<p>
+			<%= f.label :city_name %> <br>
+			<%= f.text_field :city_name, class: 'form-control' %>
+		</p>
+		<p>
+			<%= f.submit "Submit", class: "btn btn-primary" %>
+		</p>
+	</div>
+<% end %>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-4162252087705751",
+      enable_page_level_ads: true
+    });
+  </script> -->
+
+  <title>
+    <%= if content_for?(:title) then yield(:title) + ' | ' end %>
+    Eduly - Platform For Searching Dream Indian Government Jobs
+  </title>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="google-site-verification" content="kGo2qAcZhLjF4gXrxvRjTxj5FCYLCPvQIT6BFAcHsXw" />
+
+  <% if Rails.env.production? %>
+    <script type="text/javascript">
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-88379717-1', 'auto');
+    </script>
+  <% end %>
+</head>
+
+<body>
+    <%= render "layouts/shared/header" %>
+
+    <div class="container">
+        <%= yield %>
+    </div>
+
+    <%= render "layouts/landings_shared/footer" %>
+</body>
+</html>

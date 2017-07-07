@@ -1,0 +1,34 @@
+<h2 class="sub-header">List of Employment Organisations | <%= link_to 'New Employment Organisation', new_empl_organisation_path %></h2>
+
+<div class="table-responsive">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Organisation</th>
+				<th>Number of Jobs</th>
+				<th>Operations</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @empl_organisations.each do |empl_organisation| %>
+			<tr>
+				<td><%= empl_organisation.id %></td>
+				<td><%= link_to empl_organisation.organisation_name, empl_organisation_path(empl_organisation) %></td>
+				<td><%= empl_organisation.empl_jobs.count %></td>
+				<td>
+					<%= link_to "Edit", edit_empl_organisation_path(empl_organisation) %> |
+					<%= link_to "Delete", empl_organisation_path(empl_organisation), method: :delete, data: { confirm: 'Are you sure?' } %>
+				</td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
+
+<h2>Import Empl Organisation</h2>
+
+<%= form_tag import_empl_organisations_path, multipart: true do %>
+	<%= file_field_tag :file %>
+	<%= submit_tag "Import" %>
+<% end %>

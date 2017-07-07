@@ -1,0 +1,9 @@
+<%= link_to 'New Course', new_course_path %>
+
+<ul>
+	<% @courses.each do |course| %>
+		<li>
+			<%= link_to course.course_title, course_path(course) %>
+		</li>
+	<% end %>
+</ul>
